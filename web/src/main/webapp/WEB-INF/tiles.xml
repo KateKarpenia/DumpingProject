@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <definition name="default" template="/WEB-INF/views/layouts/default_layout.jspx">
+        <put-attribute name="header" value="/WEB-INF/views/includes/header.jsp" />
+        <put-attribute name="top_buttons" value="/WEB-INF/views/includes/top_buttons.jsp" />
+        <put-attribute name="left_categories" value="/WEB-INF/views/includes/left_categories.jsp" />
+        <put-attribute name="right_overview" />
+
+    </definition>
+
+    <definition name="main" extends="default">
+        <put-attribute name="right_overview" value="/WEB-INF/views/includes/right_overview.jsp" />
+    </definition>
+    <definition name="category" extends="default">
+        <put-attribute name="right_overview" value="/WEB-INF/views/includes/goods_list.jsp" />
+        <!--<put-attribute name="pagination" value="/WEB-INF/views/includes/pagination.jsp" />-->
+    </definition>
+    <definition name="bodytext" extends="default">
+        <put-attribute name="right_overview" value="/WEB-INF/views/includes/goods_details.jsp" />
+        <put-attribute name="pagination" value="/WEB-INF/views/includes/pagination.jsp" />
+    </definition>
+    <definition name="login" extends="default">
+        <put-attribute name="right_overview" value="/WEB-INF/views/includes/login.jsp" />
+    </definition>
+
+
+
+</tiles-definitions>
